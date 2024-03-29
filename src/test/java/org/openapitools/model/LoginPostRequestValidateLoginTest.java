@@ -130,7 +130,6 @@ import java.util.Collection;
 import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
-@Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class LoginPostRequestValidateLoginTest {
 
     private String username;
