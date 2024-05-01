@@ -1,0 +1,44 @@
+-------------------------------------------------------------------------------
+Test set: org.openapitools.api.ApplicationTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 10, Errors: 0, Skipped: 0, Time elapsed: 1.297 s <<< FAILURE! - in org.openapitools.api.ApplicationTest
+testLoginButtonClickEndpoint  Time elapsed: 0.06 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<404>
+	at org.openapitools.api.ApplicationTest.testLoginButtonClickEndpoint(ApplicationTest.java:65)
+
+testLoginEndpoint  Time elapsed: 0.159 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<401>
+	at org.openapitools.api.ApplicationTest.testLoginEndpoint(ApplicationTest.java:59)
+
+testAccessibilityEndpoint  Time elapsed: 0.015 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<501>
+	at org.openapitools.api.ApplicationTest.testAccessibilityEndpoint(ApplicationTest.java:37)
+
+testViewportEndpoint  Time elapsed: 0.017 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<501>
+	at org.openapitools.api.ApplicationTest.testViewportEndpoint(ApplicationTest.java:98)
+
+testBrowserCompatibilityEndpoint  Time elapsed: 0.013 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<501>
+	at org.openapitools.api.ApplicationTest.testBrowserCompatibilityEndpoint(ApplicationTest.java:43)
+
+testCredentialsObscuredEndpoint  Time elapsed: 0.02 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<501>
+	at org.openapitools.api.ApplicationTest.testCredentialsObscuredEndpoint(ApplicationTest.java:50)
+
+testLoginPageLoadEndpoint  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<404>
+	at org.openapitools.api.ApplicationTest.testLoginPageLoadEndpoint(ApplicationTest.java:77)
+
+testUsernameEndpoint  Time elapsed: 0.014 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<501>
+	at org.openapitools.api.ApplicationTest.testUsernameEndpoint(ApplicationTest.java:92)
+
+testPasswordEndpoint  Time elapsed: 0.009 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<501>
+	at org.openapitools.api.ApplicationTest.testPasswordEndpoint(ApplicationTest.java:85)
+
+testLoginButtonStatusEndpoint  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<404>
+	at org.openapitools.api.ApplicationTest.testLoginButtonStatusEndpoint(ApplicationTest.java:71)
+
