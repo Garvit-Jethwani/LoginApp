@@ -13,12 +13,16 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 @Configuration
 <span class="fc" id="L14">public class SpringDocConfiguration {</span>
 
-	@Bean(name = &quot;org.openapitools.configuration.SpringDocConfiguration.apiInfo&quot;)
-	OpenAPI apiInfo() {
-<span class="fc" id="L18">		return new OpenAPI().info(new Info().title(&quot;Login API&quot;)</span>
-<span class="fc" id="L19">			.description(&quot;The API specification for Login functionality based on given Gherkin scenarios&quot;)</span>
-<span class="fc" id="L20">			.version(&quot;1.0.0&quot;));</span>
-	}
-
+    @Bean(name = &quot;org.openapitools.configuration.SpringDocConfiguration.apiInfo&quot;)
+    OpenAPI apiInfo() {
+<span class="fc" id="L18">        return new OpenAPI()</span>
+<span class="fc" id="L19">                .info(</span>
+                        new Info()
+<span class="fc" id="L21">                                .title(&quot;Login API&quot;)</span>
+<span class="fc" id="L22">                                .description(&quot;The API specification for Login functionality based on given Gherkin scenarios&quot;)</span>
+<span class="fc" id="L23">                                .version(&quot;1.0.0&quot;)</span>
+                )
+        ;
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
