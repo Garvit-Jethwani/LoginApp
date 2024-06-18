@@ -6,18 +6,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 <span class="nc" id="L8">public class ApiUtil {</span>
-
-	public static void setExampleResponse(NativeWebRequest req, String contentType, String example) {
-		try {
-<span class="nc" id="L12">			HttpServletResponse res = req.getNativeResponse(HttpServletResponse.class);</span>
-<span class="nc" id="L13">			res.setCharacterEncoding(&quot;UTF-8&quot;);</span>
-<span class="nc" id="L14">			res.addHeader(&quot;Content-Type&quot;, contentType);</span>
-<span class="nc" id="L15">			res.getWriter().print(example);</span>
-		}
-<span class="nc" id="L17">		catch (IOException e) {</span>
-<span class="nc" id="L18">			throw new RuntimeException(e);</span>
-<span class="nc" id="L19">		}</span>
-<span class="nc" id="L20">	}</span>
-
+    public static void setExampleResponse(NativeWebRequest req, String contentType, String example) {
+        try {
+<span class="nc" id="L11">            HttpServletResponse res = req.getNativeResponse(HttpServletResponse.class);</span>
+<span class="nc" id="L12">            res.setCharacterEncoding(&quot;UTF-8&quot;);</span>
+<span class="nc" id="L13">            res.addHeader(&quot;Content-Type&quot;, contentType);</span>
+<span class="nc" id="L14">            res.getWriter().print(example);</span>
+<span class="nc" id="L15">        } catch (IOException e) {</span>
+<span class="nc" id="L16">            throw new RuntimeException(e);</span>
+<span class="nc" id="L17">        }</span>
+<span class="nc" id="L18">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

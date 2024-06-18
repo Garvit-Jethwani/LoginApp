@@ -31,30 +31,38 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = &quot;org.openapitools.codegen.languages.SpringCodegen&quot;,
-		date = &quot;2024-03-27T18:23:55.118803+05:30[Asia/Kolkata]&quot;, comments = &quot;Generator version: 7.4.0&quot;)
+@Generated(value = &quot;org.openapitools.codegen.languages.SpringCodegen&quot;, date = &quot;2024-03-27T18:23:55.118803+05:30[Asia/Kolkata]&quot;, comments = &quot;Generator version: 7.4.0&quot;)
 @Validated
 @Tag(name = &quot;login-button-click&quot;, description = &quot;the login-button-click API&quot;)
 public interface LoginButtonClickApi {
 
-	default Optional&lt;NativeWebRequest&gt; getRequest() {
-<span class="nc" id="L41">		return Optional.empty();</span>
-	}
+    default Optional&lt;NativeWebRequest&gt; getRequest() {
+<span class="nc" id="L40">        return Optional.empty();</span>
+    }
 
-	/**
-	 * GET /login-button-click : Check if login button is clickable
-	 * @return Successful operation (status code 200)
-	 */
-	@Operation(operationId = &quot;loginButtonClickGet&quot;, summary = &quot;Check if login button is clickable&quot;,
-			responses = { @ApiResponse(responseCode = &quot;200&quot;, description = &quot;Successful operation&quot;) })
-	@RequestMapping(method = RequestMethod.GET, value = &quot;/login-button-click&quot;)
+    /**
+     * GET /login-button-click : Check if login button is clickable
+     *
+     * @return Successful operation (status code 200)
+     */
+    @Operation(
+        operationId = &quot;loginButtonClickGet&quot;,
+        summary = &quot;Check if login button is clickable&quot;,
+        responses = {
+            @ApiResponse(responseCode = &quot;200&quot;, description = &quot;Successful operation&quot;)
+        }
+    )
+    @RequestMapping(
+        method = RequestMethod.GET,
+        value = &quot;/login-button-click&quot;
+    )
+    
+    default ResponseEntity&lt;Void&gt; loginButtonClickGet(
+        
+    ) {
+<span class="nc" id="L63">        return new ResponseEntity&lt;&gt;(HttpStatus.NOT_IMPLEMENTED);</span>
 
-	default ResponseEntity&lt;Void&gt; loginButtonClickGet(
-
-	) {
-<span class="nc" id="L55">		return new ResponseEntity&lt;&gt;(HttpStatus.NOT_IMPLEMENTED);</span>
-
-	}
+    }
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

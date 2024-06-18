@@ -10,31 +10,30 @@ import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
 public class RFC3339DateFormat extends DateFormat {
+  private static final long serialVersionUID = 1L;
+<span class="fc" id="L14">  private static final TimeZone TIMEZONE_Z = TimeZone.getTimeZone(&quot;UTC&quot;);</span>
 
-	private static final long serialVersionUID = 1L;
+<span class="fc" id="L16">  private final StdDateFormat fmt = new StdDateFormat()</span>
+<span class="fc" id="L17">          .withTimeZone(TIMEZONE_Z)</span>
+<span class="fc" id="L18">          .withColonInTimeZone(true);</span>
 
-<span class="fc" id="L16">	private static final TimeZone TIMEZONE_Z = TimeZone.getTimeZone(&quot;UTC&quot;);</span>
+<span class="fc" id="L20">  public RFC3339DateFormat() {</span>
+<span class="fc" id="L21">    this.calendar = new GregorianCalendar();</span>
+<span class="fc" id="L22">  }</span>
 
-<span class="fc" id="L18">	private final StdDateFormat fmt = new StdDateFormat().withTimeZone(TIMEZONE_Z).withColonInTimeZone(true);</span>
+  @Override
+  public Date parse(String source, ParsePosition pos) {
+<span class="nc" id="L26">    return fmt.parse(source, pos);</span>
+  }
 
-<span class="fc" id="L20">	public RFC3339DateFormat() {</span>
-<span class="fc" id="L21">		this.calendar = new GregorianCalendar();</span>
-<span class="fc" id="L22">	}</span>
+  @Override
+  public StringBuffer format(Date date, StringBuffer toAppendTo, FieldPosition fieldPosition) {
+<span class="nc" id="L31">    return fmt.format(date, toAppendTo, fieldPosition);</span>
+  }
 
-	@Override
-	public Date parse(String source, ParsePosition pos) {
-<span class="nc" id="L26">		return fmt.parse(source, pos);</span>
-	}
-
-	@Override
-	public StringBuffer format(Date date, StringBuffer toAppendTo, FieldPosition fieldPosition) {
-<span class="nc" id="L31">		return fmt.format(date, toAppendTo, fieldPosition);</span>
-	}
-
-	@Override
-	public Object clone() {
-<span class="nc" id="L36">		return this;</span>
-	}
-
+  @Override
+  public Object clone() {
+<span class="nc" id="L36">    return this;</span>
+  }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

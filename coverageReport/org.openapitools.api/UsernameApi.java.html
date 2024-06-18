@@ -32,53 +32,61 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = &quot;org.openapitools.codegen.languages.SpringCodegen&quot;,
-		date = &quot;2024-03-27T18:23:55.118803+05:30[Asia/Kolkata]&quot;, comments = &quot;Generator version: 7.4.0&quot;)
+@Generated(value = &quot;org.openapitools.codegen.languages.SpringCodegen&quot;, date = &quot;2024-03-27T18:23:55.118803+05:30[Asia/Kolkata]&quot;, comments = &quot;Generator version: 7.4.0&quot;)
 @Validated
 @Tag(name = &quot;username&quot;, description = &quot;the username API&quot;)
 public interface UsernameApi {
 
-	default Optional&lt;NativeWebRequest&gt; getRequest() {
-<span class="nc" id="L42">		return Optional.empty();</span>
-	}
+    default Optional&lt;NativeWebRequest&gt; getRequest() {
+<span class="nc" id="L41">        return Optional.empty();</span>
+    }
 
-	/**
-	 * POST /username : Send text to username field
-	 * @param usernamePostRequest (required)
-	 * @return Successful operation (status code 200) or In case of large text (e.g. 5000
-	 * characters), system should handle it through error response or success response (if
-	 * it can handle it) (status code 400)
-	 */
-	@Operation(operationId = &quot;usernamePost&quot;, summary = &quot;Send text to username field&quot;, responses = {
-			@ApiResponse(responseCode = &quot;200&quot;, description = &quot;Successful operation&quot;,
-					content = { @Content(mediaType = &quot;application/json&quot;,
-							schema = @Schema(implementation = UsernamePostRequest.class)) }),
-			@ApiResponse(responseCode = &quot;400&quot;,
-					description = &quot;In case of large text (e.g. 5000 characters), system should handle it through error response or success response (if it can handle it)&quot;,
-					content = { @Content(mediaType = &quot;application/json&quot;,
-							schema = @Schema(implementation = UsernamePostRequest.class)) }) })
-	@RequestMapping(method = RequestMethod.POST, value = &quot;/username&quot;, produces = { &quot;application/json&quot; },
-			consumes = { &quot;application/json&quot; })
+    /**
+     * POST /username : Send text to username field
+     *
+     * @param usernamePostRequest  (required)
+     * @return Successful operation (status code 200)
+     *         or In case of large text (e.g. 5000 characters), system should handle it through error response or success response (if it can handle it) (status code 400)
+     */
+    @Operation(
+        operationId = &quot;usernamePost&quot;,
+        summary = &quot;Send text to username field&quot;,
+        responses = {
+            @ApiResponse(responseCode = &quot;200&quot;, description = &quot;Successful operation&quot;, content = {
+                @Content(mediaType = &quot;application/json&quot;, schema = @Schema(implementation = UsernamePostRequest.class))
+            }),
+            @ApiResponse(responseCode = &quot;400&quot;, description = &quot;In case of large text (e.g. 5000 characters), system should handle it through error response or success response (if it can handle it)&quot;, content = {
+                @Content(mediaType = &quot;application/json&quot;, schema = @Schema(implementation = UsernamePostRequest.class))
+            })
+        }
+    )
+    @RequestMapping(
+        method = RequestMethod.POST,
+        value = &quot;/username&quot;,
+        produces = { &quot;application/json&quot; },
+        consumes = { &quot;application/json&quot; }
+    )
+    
+    default ResponseEntity&lt;UsernamePostRequest&gt; usernamePost(
+        @Parameter(name = &quot;UsernamePostRequest&quot;, description = &quot;&quot;, required = true) @Valid @RequestBody UsernamePostRequest usernamePostRequest
+    ) {
+<span class="nc" id="L73">        getRequest().ifPresent(request -&gt; {</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader(&quot;Accept&quot;))) {</span>
+<span class="nc bnc" id="L75" title="All 2 branches missed.">                if (mediaType.isCompatibleWith(MediaType.valueOf(&quot;application/json&quot;))) {</span>
+<span class="nc" id="L76">                    String exampleString = &quot;{ \&quot;text\&quot; : \&quot;text\&quot; }&quot;;</span>
+<span class="nc" id="L77">                    ApiUtil.setExampleResponse(request, &quot;application/json&quot;, exampleString);</span>
+<span class="nc" id="L78">                    break;</span>
+                }
+<span class="nc bnc" id="L80" title="All 2 branches missed.">                if (mediaType.isCompatibleWith(MediaType.valueOf(&quot;application/json&quot;))) {</span>
+<span class="nc" id="L81">                    String exampleString = &quot;{ \&quot;text\&quot; : \&quot;text\&quot; }&quot;;</span>
+<span class="nc" id="L82">                    ApiUtil.setExampleResponse(request, &quot;application/json&quot;, exampleString);</span>
+<span class="nc" id="L83">                    break;</span>
+                }
+<span class="nc" id="L85">            }</span>
+<span class="nc" id="L86">        });</span>
+<span class="nc" id="L87">        return new ResponseEntity&lt;&gt;(HttpStatus.NOT_IMPLEMENTED);</span>
 
-	default ResponseEntity&lt;UsernamePostRequest&gt; usernamePost(@Parameter(name = &quot;UsernamePostRequest&quot;, description = &quot;&quot;,
-			required = true) @Valid @RequestBody UsernamePostRequest usernamePostRequest) {
-<span class="nc" id="L65">		getRequest().ifPresent(request -&gt; {</span>
-<span class="nc bnc" id="L66" title="All 2 branches missed.">			for (MediaType mediaType : MediaType.parseMediaTypes(request.getHeader(&quot;Accept&quot;))) {</span>
-<span class="nc bnc" id="L67" title="All 2 branches missed.">				if (mediaType.isCompatibleWith(MediaType.valueOf(&quot;application/json&quot;))) {</span>
-<span class="nc" id="L68">					String exampleString = &quot;{ \&quot;text\&quot; : \&quot;text\&quot; }&quot;;</span>
-<span class="nc" id="L69">					ApiUtil.setExampleResponse(request, &quot;application/json&quot;, exampleString);</span>
-<span class="nc" id="L70">					break;</span>
-				}
-<span class="nc bnc" id="L72" title="All 2 branches missed.">				if (mediaType.isCompatibleWith(MediaType.valueOf(&quot;application/json&quot;))) {</span>
-<span class="nc" id="L73">					String exampleString = &quot;{ \&quot;text\&quot; : \&quot;text\&quot; }&quot;;</span>
-<span class="nc" id="L74">					ApiUtil.setExampleResponse(request, &quot;application/json&quot;, exampleString);</span>
-<span class="nc" id="L75">					break;</span>
-				}
-<span class="nc" id="L77">			}</span>
-<span class="nc" id="L78">		});</span>
-<span class="nc" id="L79">		return new ResponseEntity&lt;&gt;(HttpStatus.NOT_IMPLEMENTED);</span>
-
-	}
+    }
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
