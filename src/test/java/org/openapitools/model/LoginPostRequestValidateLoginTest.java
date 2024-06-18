@@ -104,6 +104,8 @@ These test scenarios cover various combinations of valid and invalid input for t
 roost_feedback [6/17/2024, 3:23:45 PM]:Add comments in test file
 
 roost_feedback [6/18/2024, 12:31:38 PM]: Add one more scenarios.
+
+roost_feedback [6/18/2024, 12:33:46 PM]:Add one more scenario in test file.
 */
 
 // ********RoostGPT********
@@ -173,12 +175,21 @@ public class LoginPostRequestValidateLoginTest {
             // { null, "validPassword123", false },
             // { "validuser", null, false },
             // Additional test scenario: Valid username and password with special characters
-            { "validuser", "validPassword123!@#", true }
+            { "validuser", "validPassword123!@#", true },
+            // Additional test scenario: Valid username and password at the minimum length
+            { "validU", "valid1", true }
         });
     }
 
     @Test
     public void testValidateLogin() {
-        assertEquals(expectedResult, loginPostRequest.validateLogin());
+        // Arrange
+        // The test data is already set up in the constructor and setUp method
+
+        // Act
+        boolean result = loginPostRequest.validateLogin();
+
+        // Assert
+        assertEquals(expectedResult, result);
     }
 }
