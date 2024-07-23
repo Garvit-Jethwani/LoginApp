@@ -57,6 +57,6 @@ We would like to acknowledge the following tools and resources used in the devel
 
 - [RoostGPT](https://www.roost.ai/) - An AI Test Generator used for functional test and unit test generation.
 - [OpenAPI Generator](https://openapi-generator.tech/) - A tool used for generating source code from API specifications.
-- [GitHub CoPilot](https://pilot.github.com/) - An AI-powered coding assistant used for code enhancement and issue resolution.,.
+- [GitHub CoPilot](https://pilot.github.com/) - An AI-powered coding assistant used for code enhancement and issue resolution.
 
 
