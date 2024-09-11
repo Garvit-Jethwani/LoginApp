@@ -1,9 +1,9 @@
 name: Generate test using RoostGPT
 
 on:
-  pull_request: # Trigger the workflow on pull request events
+  pull_request:
     branches:
-      - main  # You can specify branches to limit triggers, adjust as needed
+      - main
 
 env:
   ROOST_TOKEN: ${{ secrets.ROOST_TOKEN }}
@@ -22,7 +22,7 @@ jobs:
   build-and-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code # Step to checkout the code
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Log in to Docker Hub
@@ -32,13 +32,13 @@ jobs:
         run: echo "${DOCKERHUB_TOKEN}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin
 
       - name: Pull Docker image
-        run: docker pull zbio/roostgpt-cli:latest # Pull the pre-built Docker image
+        run: docker pull zbio/roostgpt-cli:latest
 
       - name: Run the container
         run: |
           docker run --rm \
-            -v "${{ github.workspace }}:/workspaces" \ # Mounts the GitHub workspace: for source code and tests
-            -v "${{ github.workspace }}/config:/roost/config" \ # Mounts the config directory containing the env file
+            -v "${{ github.workspace }}:/workspaces" \
+            -v "${{ github.workspace }}/config:/roost/config" \
             -e ROOST_TOKEN="${{ secrets.ROOST_TOKEN }}" \
             -e OPENAI_API_KEY="${{ secrets.OPENAI_API_KEY }}" \
             -e GITHUB_TOKEN="${{ secrets.GITHUB_TOKEN }}" \
@@ -51,3 +51,4 @@ jobs:
             -e CLAUDE_AI_API_KEY="${{ secrets.CLAUDE_AI_API_KEY }}" \
             -e DBRX_AUTH_TOKEN="${{ secrets.DBRX_AUTH_TOKEN }}" \
             zbio/roostgpt-cli:latest
+        shell: bash
