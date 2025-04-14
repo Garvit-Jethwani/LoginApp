@@ -8,7 +8,7 @@ The development process for this project followed the following steps:
 
 1. **Functional Test Generation**: RoostGPT was used to generate functional tests for the login functionality, resulting in a feature file (Gherkin scenarios) and an API specification file.
 
-  This was the user description in jira ticket.
+  This was the user description in jira ticket.,,
   
 ```
 
