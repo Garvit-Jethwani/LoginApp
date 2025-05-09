@@ -1,0 +1,3 @@
+org\openapitools\OpenApiGeneratorApplicationTests.class
+org\openapitools\model\CredentialsObscuredGet200ResponseSetObscuredTest.class
+org\openapitools\model\LoginPostRequestGetPasswordTest.class
